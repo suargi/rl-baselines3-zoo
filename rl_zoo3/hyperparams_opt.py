@@ -30,9 +30,9 @@ def sample_ppo_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
     vf_coef = trial.suggest_float("vf_coef", 0, 1)
     net_arch_type = trial.suggest_categorical("net_arch", ["tiny", "small", "medium", "big"])
     # Uncomment for gSDE (continuous actions)
-    log_std_init = trial.suggest_float("log_std_init", -4, 1)
+    # log_std_init = trial.suggest_float("log_std_init", -4, 1)
     # Uncomment for gSDE (continuous action)
-    sde_sample_freq = trial.suggest_categorical("sde_sample_freq", [-1, 8, 16, 32, 64, 128, 256])
+    # sde_sample_freq = trial.suggest_categorical("sde_sample_freq", [-1, 8, 16, 32, 64, 128, 256])
     # Orthogonal initialization
     ortho_init = False
     # ortho_init = trial.suggest_categorical('ortho_init', [False, True])
@@ -56,7 +56,7 @@ def sample_ppo_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
     #    "medium": dict(pi=[256, 256], vf=[256, 256]),
     #}[net_arch_type]
     net_arch = {
-        "tiny": dict(pi=[64 64], vf=[64 64]),
+        "tiny": dict(pi=[64, 64], vf=[64, 64]),
         "small": dict(pi=[256, 256], vf=[256, 256]),
         "medium": dict(pi=[512, 512], vf=[512, 512]),
         "big": dict(pi=[512, 512, 512], vf=[512, 512, 512]),
@@ -261,7 +261,7 @@ def sample_sac_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
     # ent_coef = trial.suggest_categorical('ent_coef', ['auto', 0.5, 0.1, 0.05, 0.01, 0.0001])
     ent_coef = "auto"
     # You can comment that out when not using gSDE
-    log_std_init = trial.suggest_float("log_std_init", -4, 1)
+    # log_std_init = trial.suggest_float("log_std_init", -4, 1)
     # NOTE: Add "verybig" to net_arch when tuning HER
     net_arch_type = trial.suggest_categorical("net_arch", ["small", "medium", "big", "large"])
     # activation_fn = trial.suggest_categorical('activation_fn', [nn.Tanh, nn.ReLU, nn.ELU, nn.LeakyReLU])
