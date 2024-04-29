@@ -581,6 +581,8 @@ Walker2d-v4:
   max_grad_norm: 1
   vf_coef: 0.871923
 
+
+# === Odysseia
 RocketLanderContinuous:
   n_envs: 16
   n_timesteps: !!float 1e6
