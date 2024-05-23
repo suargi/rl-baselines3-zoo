@@ -281,15 +281,14 @@ NeckEnvRelative-v2:
 
 # === Odysseia
 2dCylinderAFC_nek:
-  n_timesteps: !!float 5e5
+  n_timesteps: !!float 1e6
   policy: 'MlpPolicy'
   batch_size: 256
-  learning_rate: lin_7.3e-4
-  buffer_size: 1000000
+  buffer_size: 20000
   ent_coef: 'auto'
   gamma: 0.99
   tau: 0.01
   train_freq: 1
   gradient_steps: 1
   learning_starts: 10000
-  policy_kwargs: "dict(net_arch=[400, 300])"
+  policy_kwargs: "dict(net_arch=[512, 512])"
