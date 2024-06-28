@@ -283,12 +283,12 @@ NeckEnvRelative-v2:
 2dCylinderAFC_nek:
   n_timesteps: !!float 5e6
   policy: 'MlpPolicy'
-  batch_size: 256
+  batch_size: 128
   buffer_size: 20000
   ent_coef: 'auto'
   gamma: 0.99
   tau: 0.01
   train_freq: 1
   gradient_steps: 1
-  learning_starts: 10000
+  learning_starts: 1000
   policy_kwargs: "dict(net_arch=[256, 256])"
