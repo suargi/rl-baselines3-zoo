@@ -281,9 +281,9 @@ NeckEnvRelative-v2:
 
 # === Odysseia
 2dCylinderAFC_nek:
-  n_timesteps: !!float 4e4
+  n_timesteps: !!float 5e4
   policy: 'MlpPolicy'
-  batch_size: 128
+  batch_size: 256
   buffer_size: 20000
   ent_coef: 'auto'
   gamma: 0.99
