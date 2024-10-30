@@ -583,18 +583,17 @@ Walker2d-v4:
 
 
 # === Odysseia
-# Based on DRLFluids
 2dCylinderAFC_nek:
   n_envs: 1
   n_timesteps: !!float 3e4
   policy: 'MlpPolicy'
-  n_steps: 25
-  batch_size: 20
-  gae_lambda: 0.9
-  gamma: 0.97
-  n_epochs: 4
+  n_steps: 512
+  batch_size: 256
+  gae_lambda: 0.97
+  gamma: 0.98
+  n_epochs: 5
   ent_coef: 0.01
-  clip_range: 0.2
+  clip_range: 0.1
   policy_kwargs: "dict(activation_fn=nn.Tanh,
                        net_arch=dict(pi=[512, 512], vf=[512, 512])
                        )"
