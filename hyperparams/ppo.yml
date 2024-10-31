@@ -597,7 +597,7 @@ Walker2d-v4:
   ent_coef: 0.01
   clip_range: 0.1
   clip_range_vf: 0.1
-  max_grad_norm: float("inf")
+  max_grad_norm: !!float("inf")
   policy_kwargs: "dict(activation_fn=nn.Tanh,
                        net_arch=dict(pi=[512, 512], vf=[512, 512])
                        )"
