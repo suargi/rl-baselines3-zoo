@@ -588,17 +588,18 @@ Walker2d-v4:
   n_timesteps: !!float 3e4
   policy: 'MlpPolicy'
   n_epochs: 80
-  learning_rate: lin_1e-3
+  learning_rate: lin_1e-4
   n_steps: 128
-  batch_size: 256
+  batch_size: 128
   gae_lambda: 0.97
   gamma: 0.99
-  normalize: False
-  ent_coef: 0.01
+  normalize: True
+  ent_coef: 0.0
   clip_range: lin_0.1
-  clip_range_vf: 0.1
-  #max_grad_norm: !!float Inf
-  use_sde: True
+  #clip_range_vf: 0.1
+  max_grad_norm: 0.8
+  use_sde: False
+  #sde_sample_freq: 4
   policy_kwargs: "dict(activation_fn=nn.Tanh,
                        net_arch=dict(pi=[512, 512], vf=[512, 512])
                        )"
